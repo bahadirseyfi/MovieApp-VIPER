@@ -13,3 +13,12 @@ struct CellProperties {
     static let shadowOpacity: Float = 0.3
     static let shadowOffset = CGSize(width: 0, height: 5)
 }
+
+struct NavigationProperties {
+    static let largeContentTitle: String = "Movie"
+}
+
+struct TabbarProperties {
+    static let title: String = "Movies"
+    static let image: String = "anasayfa-x25"
+}
