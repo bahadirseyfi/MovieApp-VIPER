@@ -7,7 +7,7 @@
 import Alamofire
 import Foundation
 
-public typealias Completion<T> = (Result<T, Error>) -> Void where T: Codable
+public typealias Completion<T> = (Result<T, APIClientError>) -> Void where T: Codable
 
 public final class NetworkManager<EndpointItem: Endpoint> {
     public init() { }
@@ -31,14 +31,24 @@ public final class NetworkManager<EndpointItem: Endpoint> {
                         let decodedObject = try JSONDecoder().decode(type, from: data)
                         completion(.success(decodedObject))
                     } catch {
-                        completion(.failure(error))
+                        let decodingError = APIClientError.decoding(error: error as? DecodingError)
+                        completion(.failure(decodingError))
                     }
                 case .failure(let error):
                     if NSURLErrorTimedOut == (error as NSError).code {
-                        print("Time Out Error")
-                        completion(.failure(error))
+                        completion(.failure(.timeout))
                     } else {
-                        print(error)
+                        guard let data = response.data else {
+                            completion(.failure(.networkError))
+                            return
+                        }
+                        do {
+                            let clientError = try JSONDecoder().decode(ClientError.self, from: data)
+                            completion(.failure(.handledError(error: clientError)))
+                        } catch {
+                            let decodingError = APIClientError.decoding(error: error as? DecodingError)
+                            completion(.failure(decodingError))
+                        }
                     }
                 }
             })
