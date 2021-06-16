@@ -11,25 +11,18 @@ import UIKit
 protocol MovieViewInterface: AnyObject{
     func reloadPopular()
     func prepareCollectionViews()
-    //  func showToLoading()
-    //  func hideToLoading()
+    func setNavigationItem(_ title: String)
+    func prepareSearchController()
 }
 
 final class MovieViewController: UIViewController {
     
     @IBOutlet private weak var popularCollectionView: UICollectionView!
-    
     var presenter: MoviePresenterInterface!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.viewDidLoad()
-        title = "Movies"
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 38, height: 38))
-        imageView.contentMode = .scaleAspectFit
-        let image = UIImage(named: "full_primary")
-        imageView.image = image
-        navigationItem.titleView = imageView
     }
     
     private func redirectTo(movieID: Int) {
@@ -40,7 +33,8 @@ final class MovieViewController: UIViewController {
     }
 }
 
-extension MovieViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+// MARK: - UICollectionViewDataSource
+extension MovieViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return presenter.numberOfItems() ?? 0
@@ -66,6 +60,12 @@ extension MovieViewController: UICollectionViewDataSource, UICollectionViewDeleg
     }
 }
 
+// MARK: - UICollectionViewDelegate
+extension MovieViewController: UICollectionViewDelegate {
+    
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
 extension MovieViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let size = presenter.calculateCellSize(collectionViewWidth: Double(collectionView.frame.size.width))
@@ -73,11 +73,31 @@ extension MovieViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        .init(top: .zero, left: CGFloat(presenter.cellPadding), bottom: .zero, right: CGFloat(presenter.cellPadding))
+        .init(top: CGFloat(presenter.cellPadding), left: CGFloat(presenter.cellPadding), bottom: .zero, right: CGFloat(presenter.cellPadding))
     }
 }
 
+// MARK: - MovieViewInterface
 extension MovieViewController: MovieViewInterface {
+    func prepareSearchController() {
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.hidesNavigationBarDuringPresentation = true
+        searchController.obscuresBackgroundDuringPresentation = true
+        searchController.searchBar.setPositionAdjustment(.init(horizontal: 5, vertical: 0), for: .search)
+        searchController.searchBar.searchTextPositionAdjustment = .init(horizontal: 5, vertical: 0)
+        
+        UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).title = "Vazgeç"
+        UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).tintColor = UIColor.cyan
+        navigationItem.searchController = searchController
+    }
+    
+    func setNavigationItem(_ title: String) {
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 38, height: 38))
+        imageView.contentMode = .scaleAspectFit
+        let image = UIImage(named: title)
+        imageView.image = image
+        navigationItem.titleView = imageView
+    }
     
     func prepareCollectionViews() {
         popularCollectionView.register(cellType: PopularMovieCell.self)

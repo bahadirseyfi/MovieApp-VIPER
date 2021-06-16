@@ -43,7 +43,9 @@ final class MoviePresenter {
 extension MoviePresenter: MoviePresenterInterface {
     func viewDidLoad() {
         view?.prepareCollectionViews()
+        view?.prepareSearchController()
         fetchPopularMovies()
+        view?.setNavigationItem(NavigationProperties.navigationItemName)
     }
     
     func popularMovie(_ index: Int) -> Movie? {
