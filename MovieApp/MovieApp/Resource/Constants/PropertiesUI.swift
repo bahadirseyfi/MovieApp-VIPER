@@ -16,6 +16,7 @@ struct CellProperties {
 
 struct NavigationProperties {
     static let largeContentTitle: String = "Movie"
+    static let navigationItemName: String = "full_primary"
 }
 
 struct TabbarProperties {
