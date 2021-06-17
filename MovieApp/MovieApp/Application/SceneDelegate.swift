@@ -18,7 +18,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         
         guard let viewController = MovieRouter.createModule() else { return }
-        
         let movieNavigationController = UINavigationController(rootViewController: viewController)
         
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
