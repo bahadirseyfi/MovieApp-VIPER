@@ -35,6 +35,10 @@
 		18A05984267020BB00D3A0A3 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A05983267020BB00D3A0A3 /* Movie.swift */; };
 		18A059892670218D00D3A0A3 /* MovieEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A059882670218D00D3A0A3 /* MovieEndpoint.swift */; };
 		18A0598F267021FE00D3A0A3 /* API in Frameworks */ = {isa = PBXBuildFile; productRef = 18A0598E267021FE00D3A0A3 /* API */; };
+		18B1F135267E7F5900837417 /* MovieSuggestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B1F133267E7F5900837417 /* MovieSuggestionCell.swift */; };
+		18B1F136267E7F5900837417 /* MovieSuggestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B1F134267E7F5900837417 /* MovieSuggestionCell.xib */; };
+		18B1F141267E817900837417 /* BasicSuggestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B1F13F267E817900837417 /* BasicSuggestionCell.swift */; };
+		18B1F142267E817900837417 /* BasicSuggestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B1F140267E817900837417 /* BasicSuggestionCell.xib */; };
 		18B3F33A2672B4C100EAD18D /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3F3392672B4C100EAD18D /* UIView+Extension.swift */; };
 		18B3F33F2672B4FF00EAD18D /* PropertiesUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3F33E2672B4FF00EAD18D /* PropertiesUI.swift */; };
 		18B3F3442672B7AA00EAD18D /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18B3F3432672B7AA00EAD18D /* Detail.storyboard */; };
@@ -48,6 +52,8 @@
 		18CF51C5267E51BE00D6A9CA /* SearchSuggestionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CF51C4267E51BE00D6A9CA /* SearchSuggestionPresenter.swift */; };
 		18CF51CA267E51C900D6A9CA /* SearchSuggestionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CF51C9267E51C900D6A9CA /* SearchSuggestionRouter.swift */; };
 		18CF51CF267E51D300D6A9CA /* SearchSuggestionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CF51CE267E51D300D6A9CA /* SearchSuggestionInteractor.swift */; };
+		18CF51DD267E7C5B00D6A9CA /* SuggestionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CF51DB267E7C5B00D6A9CA /* SuggestionHeaderView.swift */; };
+		18CF51DE267E7C5B00D6A9CA /* SuggestionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18CF51DC267E7C5B00D6A9CA /* SuggestionHeaderView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +105,10 @@
 		18A0597E267020A500D3A0A3 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		18A05983267020BB00D3A0A3 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		18A059882670218D00D3A0A3 /* MovieEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieEndpoint.swift; sourceTree = "<group>"; };
+		18B1F133267E7F5900837417 /* MovieSuggestionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSuggestionCell.swift; sourceTree = "<group>"; };
+		18B1F134267E7F5900837417 /* MovieSuggestionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieSuggestionCell.xib; sourceTree = "<group>"; };
+		18B1F13F267E817900837417 /* BasicSuggestionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicSuggestionCell.swift; sourceTree = "<group>"; };
+		18B1F140267E817900837417 /* BasicSuggestionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasicSuggestionCell.xib; sourceTree = "<group>"; };
 		18B3F3392672B4C100EAD18D /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		18B3F33E2672B4FF00EAD18D /* PropertiesUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertiesUI.swift; sourceTree = "<group>"; };
 		18B3F3432672B7AA00EAD18D /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
@@ -112,6 +122,8 @@
 		18CF51C4267E51BE00D6A9CA /* SearchSuggestionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSuggestionPresenter.swift; sourceTree = "<group>"; };
 		18CF51C9267E51C900D6A9CA /* SearchSuggestionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSuggestionRouter.swift; sourceTree = "<group>"; };
 		18CF51CE267E51D300D6A9CA /* SearchSuggestionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSuggestionInteractor.swift; sourceTree = "<group>"; };
+		18CF51DB267E7C5B00D6A9CA /* SuggestionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionHeaderView.swift; sourceTree = "<group>"; };
+		18CF51DC267E7C5B00D6A9CA /* SuggestionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuggestionHeaderView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -324,6 +336,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		18B1F13A267E7F5E00837417 /* MovieSuggestionCell */ = {
+			isa = PBXGroup;
+			children = (
+				18B1F133267E7F5900837417 /* MovieSuggestionCell.swift */,
+				18B1F134267E7F5900837417 /* MovieSuggestionCell.xib */,
+			);
+			path = MovieSuggestionCell;
+			sourceTree = "<group>";
+		};
+		18B1F13E267E815600837417 /* BasicSuggestionCell */ = {
+			isa = PBXGroup;
+			children = (
+				18B1F13F267E817900837417 /* BasicSuggestionCell.swift */,
+				18B1F140267E817900837417 /* BasicSuggestionCell.xib */,
+			);
+			path = BasicSuggestionCell;
+			sourceTree = "<group>";
+		};
 		18B3F36C2672BBB800EAD18D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -345,11 +375,23 @@
 			isa = PBXGroup;
 			children = (
 				18CF51B4267E142C00D6A9CA /* SearchSuggestionViewController.swift */,
+				18CF51CE267E51D300D6A9CA /* SearchSuggestionInteractor.swift */,
 				18CF51C4267E51BE00D6A9CA /* SearchSuggestionPresenter.swift */,
 				18CF51C9267E51C900D6A9CA /* SearchSuggestionRouter.swift */,
-				18CF51CE267E51D300D6A9CA /* SearchSuggestionInteractor.swift */,
+				18CF51E2267E7C7D00D6A9CA /* SuggestionHeaderView */,
+				18B1F13A267E7F5E00837417 /* MovieSuggestionCell */,
+				18B1F13E267E815600837417 /* BasicSuggestionCell */,
 			);
 			path = SearchSuggestion;
+			sourceTree = "<group>";
+		};
+		18CF51E2267E7C7D00D6A9CA /* SuggestionHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				18CF51DC267E7C5B00D6A9CA /* SuggestionHeaderView.xib */,
+				18CF51DB267E7C5B00D6A9CA /* SuggestionHeaderView.swift */,
+			);
+			path = SuggestionHeaderView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -466,9 +508,12 @@
 			files = (
 				1853381D2670E7D700A7C62F /* PopularMovieCell.xib in Resources */,
 				189EFE2426701A9200152FAF /* LaunchScreen.storyboard in Resources */,
+				18B1F136267E7F5900837417 /* MovieSuggestionCell.xib in Resources */,
 				189EFE2126701A9200152FAF /* Assets.xcassets in Resources */,
+				18B1F142267E817900837417 /* BasicSuggestionCell.xib in Resources */,
 				18BB17DA267634B200E16EC3 /* CastCrewCell.xib in Resources */,
 				189EFE1F26701A9100152FAF /* Main.storyboard in Resources */,
+				18CF51DE267E7C5B00D6A9CA /* SuggestionHeaderView.xib in Resources */,
 				18CF51BD267E14F800D6A9CA /* SearchSuggestion.storyboard in Resources */,
 				18B3F3442672B7AA00EAD18D /* Detail.storyboard in Resources */,
 			);
@@ -520,9 +565,12 @@
 				1897F48426793D2200FEAC25 /* LoadingView.swift in Sources */,
 				18CF51C5267E51BE00D6A9CA /* SearchSuggestionPresenter.swift in Sources */,
 				18B3F3492672B7DE00EAD18D /* DetailViewController.swift in Sources */,
+				18CF51DD267E7C5B00D6A9CA /* SuggestionHeaderView.swift in Sources */,
 				189EFE1A26701A9100152FAF /* SceneDelegate.swift in Sources */,
 				18BB17DF26763A1000E16EC3 /* Credits.swift in Sources */,
 				18A0597F267020A500D3A0A3 /* Response.swift in Sources */,
+				18B1F135267E7F5900837417 /* MovieSuggestionCell.swift in Sources */,
+				18B1F141267E817900837417 /* BasicSuggestionCell.swift in Sources */,
 				181437F52677A96900F8F902 /* ProgressView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

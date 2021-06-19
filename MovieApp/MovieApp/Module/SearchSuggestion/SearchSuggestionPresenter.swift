@@ -8,7 +8,10 @@
 import Foundation
 
 protocol SearchSuggestionPresenterInterface {
-    
+    func viewDidLoad()
+    func numberOfItems(at section: Int) -> Int
+    func sizeOfItem(at indexPath: IndexPath) -> (Double, Double)
+    var headerSize: (Double,Double) { get }
 }
 
 final class SearchSuggestionPresenter {
@@ -25,5 +28,23 @@ final class SearchSuggestionPresenter {
 }
 
 extension SearchSuggestionPresenter: SearchSuggestionPresenterInterface {
+    func sizeOfItem(at indexPath: IndexPath) -> (Double, Double) {
+        if indexPath.section == 0 {
+            return (view?.collectionViewWidth ?? .zero, 80.0)
+        } else {
+            return (view?.collectionViewWidth ?? .zero, 44.0)
+        }
+    }
     
+    var headerSize: (Double, Double) {
+        return (view?.collectionViewWidth ?? .zero, 44.0)
+    }
+    
+    func numberOfItems(at section: Int) -> Int {
+       return  3
+    }
+    
+    func viewDidLoad() {
+        view?.prepareCollectionView()
+    }
 }
