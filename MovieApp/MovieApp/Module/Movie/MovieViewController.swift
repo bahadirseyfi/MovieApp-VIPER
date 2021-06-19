@@ -80,11 +80,13 @@ extension MovieViewController: UICollectionViewDelegateFlowLayout {
 // MARK: - MovieViewInterface
 extension MovieViewController: MovieViewInterface {
     func prepareSearchController() {
-        let searchController = UISearchController(searchResultsController: nil)
+        let searchController = UISearchController(searchResultsController: SearchSuggestionRouter.createModule())
         searchController.hidesNavigationBarDuringPresentation = true
         searchController.obscuresBackgroundDuringPresentation = true
         searchController.searchBar.setPositionAdjustment(.init(horizontal: 5, vertical: 0), for: .search)
         searchController.searchBar.searchTextPositionAdjustment = .init(horizontal: 5, vertical: 0)
+        
+        searchController.searchResultsUpdater = self
         
         UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).title = "Vazgeç"
         UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).tintColor = UIColor.cyan
@@ -110,5 +112,9 @@ extension MovieViewController: MovieViewInterface {
     }
 }
 
-
+extension MovieViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        print(searchController.searchBar.text ?? "")
+    }
+}
 

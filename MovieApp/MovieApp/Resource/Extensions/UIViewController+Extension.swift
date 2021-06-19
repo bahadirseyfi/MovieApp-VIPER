@@ -11,6 +11,7 @@ extension UIViewController {
     enum Storyboards:String {
         case main = "Main"
         case detail = "Detail"
+        case search = "SearchSuggestion"
     }
     
     class func instantiate<T: UIViewController>(storyboards: Storyboards) -> T {

@@ -43,6 +43,11 @@
 		18BB17D9267634B200E16EC3 /* CastCrewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BB17D7267634B200E16EC3 /* CastCrewCell.swift */; };
 		18BB17DA267634B200E16EC3 /* CastCrewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BB17D8267634B200E16EC3 /* CastCrewCell.xib */; };
 		18BB17DF26763A1000E16EC3 /* Credits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BB17DE26763A1000E16EC3 /* Credits.swift */; };
+		18CF51B5267E142C00D6A9CA /* SearchSuggestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CF51B4267E142C00D6A9CA /* SearchSuggestionViewController.swift */; };
+		18CF51BD267E14F800D6A9CA /* SearchSuggestion.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18CF51BC267E14F800D6A9CA /* SearchSuggestion.storyboard */; };
+		18CF51C5267E51BE00D6A9CA /* SearchSuggestionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CF51C4267E51BE00D6A9CA /* SearchSuggestionPresenter.swift */; };
+		18CF51CA267E51C900D6A9CA /* SearchSuggestionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CF51C9267E51C900D6A9CA /* SearchSuggestionRouter.swift */; };
+		18CF51CF267E51D300D6A9CA /* SearchSuggestionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CF51CE267E51D300D6A9CA /* SearchSuggestionInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +107,11 @@
 		18BB17D7267634B200E16EC3 /* CastCrewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastCrewCell.swift; sourceTree = "<group>"; };
 		18BB17D8267634B200E16EC3 /* CastCrewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CastCrewCell.xib; sourceTree = "<group>"; };
 		18BB17DE26763A1000E16EC3 /* Credits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credits.swift; sourceTree = "<group>"; };
+		18CF51B4267E142C00D6A9CA /* SearchSuggestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSuggestionViewController.swift; sourceTree = "<group>"; };
+		18CF51BC267E14F800D6A9CA /* SearchSuggestion.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchSuggestion.storyboard; sourceTree = "<group>"; };
+		18CF51C4267E51BE00D6A9CA /* SearchSuggestionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSuggestionPresenter.swift; sourceTree = "<group>"; };
+		18CF51C9267E51C900D6A9CA /* SearchSuggestionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSuggestionRouter.swift; sourceTree = "<group>"; };
+		18CF51CE267E51D300D6A9CA /* SearchSuggestionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSuggestionInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,7 +203,9 @@
 			children = (
 				189EFE1D26701A9100152FAF /* Main.storyboard */,
 				18B3F3432672B7AA00EAD18D /* Detail.storyboard */,
+				18CF51BC267E14F800D6A9CA /* SearchSuggestion.storyboard */,
 				1897F4532679329E00FEAC25 /* Movie */,
+				18CF51B3267E140E00D6A9CA /* SearchSuggestion */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -329,6 +341,17 @@
 			path = "Cast&Crew";
 			sourceTree = "<group>";
 		};
+		18CF51B3267E140E00D6A9CA /* SearchSuggestion */ = {
+			isa = PBXGroup;
+			children = (
+				18CF51B4267E142C00D6A9CA /* SearchSuggestionViewController.swift */,
+				18CF51C4267E51BE00D6A9CA /* SearchSuggestionPresenter.swift */,
+				18CF51C9267E51C900D6A9CA /* SearchSuggestionRouter.swift */,
+				18CF51CE267E51D300D6A9CA /* SearchSuggestionInteractor.swift */,
+			);
+			path = SearchSuggestion;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -446,6 +469,7 @@
 				189EFE2126701A9200152FAF /* Assets.xcassets in Resources */,
 				18BB17DA267634B200E16EC3 /* CastCrewCell.xib in Resources */,
 				189EFE1F26701A9100152FAF /* Main.storyboard in Resources */,
+				18CF51BD267E14F800D6A9CA /* SearchSuggestion.storyboard in Resources */,
 				18B3F3442672B7AA00EAD18D /* Detail.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -471,6 +495,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18CF51CF267E51D300D6A9CA /* SearchSuggestionInteractor.swift in Sources */,
 				18B3F3542672B83500EAD18D /* UIViewController+Extension.swift in Sources */,
 				1897F48C26795DF700FEAC25 /* PopularMovieCollectionCellPresenter.swift in Sources */,
 				185338112670E75E00A7C62F /* UICollectionView+Extension.swift in Sources */,
@@ -481,9 +506,11 @@
 				189EFE1C26701A9100152FAF /* MovieViewController.swift in Sources */,
 				1897F4772679373E00FEAC25 /* MoviePresenter.swift in Sources */,
 				18A059892670218D00D3A0A3 /* MovieEndpoint.swift in Sources */,
+				18CF51B5267E142C00D6A9CA /* SearchSuggestionViewController.swift in Sources */,
 				189EFE1826701A9100152FAF /* AppDelegate.swift in Sources */,
 				18A05984267020BB00D3A0A3 /* Movie.swift in Sources */,
 				181437E626775B2800F8F902 /* Detail.swift in Sources */,
+				18CF51CA267E51C900D6A9CA /* SearchSuggestionRouter.swift in Sources */,
 				18BB17D9267634B200E16EC3 /* CastCrewCell.swift in Sources */,
 				1853381C2670E7D700A7C62F /* PopularMovieCell.swift in Sources */,
 				18A0597626701FC700D3A0A3 /* API.swift in Sources */,
@@ -491,6 +518,7 @@
 				185338162670E7A900A7C62F /* UICollectionReusableView+Extension.swift in Sources */,
 				185B19DE2674C0890096A2AF /* DetailViewModel.swift in Sources */,
 				1897F48426793D2200FEAC25 /* LoadingView.swift in Sources */,
+				18CF51C5267E51BE00D6A9CA /* SearchSuggestionPresenter.swift in Sources */,
 				18B3F3492672B7DE00EAD18D /* DetailViewController.swift in Sources */,
 				189EFE1A26701A9100152FAF /* SceneDelegate.swift in Sources */,
 				18BB17DF26763A1000E16EC3 /* Credits.swift in Sources */,
