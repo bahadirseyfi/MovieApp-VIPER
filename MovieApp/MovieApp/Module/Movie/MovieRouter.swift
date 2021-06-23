@@ -13,10 +13,10 @@ protocol MovieRouterInterface {
 
  // Presenter Access 
 final class MovieRouter {
-    weak var navigaitonController: UINavigationController?
+    weak var navigationController: UINavigationController?
     
     init(navigationController: UINavigationController? = nil) {
-        self.navigaitonController = navigationController
+        self.navigationController = navigationController
     }
     
     static func createModule() -> MovieViewController? {
